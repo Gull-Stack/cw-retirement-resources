@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <meta name="author" content="{{ site.author }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <meta property="og:title" content="{{ title }} | {{ site.title }}">
+    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/book/ebook-cover.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    {{ content | safe }}
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-brand">Capital Wealth Advisors</p>
+                <p class="footer-phone"><a href="tel:+18012102800">{{ site.phone }}</a></p>
+                <p class="footer-url"><a href="https://www.capitalwealth.com" target="_blank" rel="noopener">www.capitalwealth.com</a></p>
+                <p class="footer-disclaimer">Advisory services offered through Capital Wealth, LLC, a State of Utah Registered Investment Advisor. Insurance services offered through CWA Insurance Services, LLC. Neither the firm nor its agents or representatives may give tax or legal advice. All investments are subject to risk including the potential loss of principal.</p>
+                <p class="footer-credit">Marketing by <a href="https://gullstack.com" target="_blank" rel="noopener">GullStack</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
