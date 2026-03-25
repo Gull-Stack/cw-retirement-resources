@@ -8,18 +8,20 @@ description: "Get complimentary retirement planning resources — ebook, guides,
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <div class="hero-text">
+            <div class="hero-text fade-in">
                 <div class="eyebrow">Complimentary Resources</div>
                 <h1>The Toolkit You Need to Retire With Confidence</h1>
                 <p>Stop guessing. Start planning. Get complimentary resources that contain real strategies — from a fiduciary advisor with 25+ years of experience.</p>
                 <a href="#get-toolkit" class="btn btn-secondary btn-large">Get Your Free Toolkit</a>
             </div>
-            <div class="hero-book">
+            <div class="hero-book fade-in">
                 <img src="/assets/images/book/ebook-cover.jpg" alt="Retire Right Retire Now ebook by Mike Stevens" class="hero-book-img">
             </div>
         </div>
     </div>
 </section>
+
+<div class="section-divider"></div>
 
 <!-- WHAT YOU'LL LEARN -->
 <section class="section">
@@ -27,15 +29,15 @@ description: "Get complimentary retirement planning resources — ebook, guides,
         <div class="eyebrow">What You'll Discover</div>
         <h2>With this complimentary toolkit you'll learn:</h2>
         <div class="learn-grid">
-            <div class="learn-item">
+            <div class="learn-item fade-in">
                 <h4>Transform Worry Into Confidence</h4>
                 <p>Replace retirement anxiety with a clear, actionable plan you can actually follow.</p>
             </div>
-            <div class="learn-item">
+            <div class="learn-item fade-in">
                 <h4>Find the Weak Points</h4>
                 <p>Discover the gaps in your current retirement plan before they become costly mistakes.</p>
             </div>
-            <div class="learn-item">
+            <div class="learn-item fade-in">
                 <h4>Small Tweaks, Big Impact</h4>
                 <p>Learn how even minor adjustments to your strategy can add years of income to your retirement.</p>
             </div>
@@ -43,38 +45,40 @@ description: "Get complimentary retirement planning resources — ebook, guides,
     </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- TOOLKIT CONTENTS -->
 <section class="section section-warm">
     <div class="container">
         <div class="eyebrow">What's Included</div>
         <h2>Your complimentary roadmap includes:</h2>
         <div class="toolkit-grid">
-            <div class="toolkit-item">
+            <div class="toolkit-item fade-in">
                 <span class="item-tag tag-ebook">eBook</span>
                 <h4>Retire Right, Retire Now</h4>
                 <p>The complete guide to building a coordinated retirement strategy using the five-pillar Retirement Money Map framework.</p>
             </div>
-            <div class="toolkit-item">
+            <div class="toolkit-item fade-in">
                 <span class="item-tag tag-guide">Guide</span>
                 <h4>Will Your Money Last as Long as You Do?</h4>
                 <p>Longevity planning strategies to ensure your savings outlive you — not the other way around.</p>
             </div>
-            <div class="toolkit-item">
+            <div class="toolkit-item fade-in">
                 <span class="item-tag tag-guide">Guide</span>
                 <h4>Are You Paying Too Much in Taxes in Retirement?</h4>
                 <p>Tax-efficient withdrawal strategies that could save you thousands every year.</p>
             </div>
-            <div class="toolkit-item">
+            <div class="toolkit-item fade-in">
                 <span class="item-tag tag-guide">Guide</span>
                 <h4>The Social Security Decisions</h4>
                 <p>When to claim, how to maximize spousal benefits, and the timing strategies most people miss.</p>
             </div>
-            <div class="toolkit-item">
+            <div class="toolkit-item fade-in">
                 <span class="item-tag tag-checklist">Checklist</span>
                 <h4>Retirement Readiness Checklist Challenge</h4>
                 <p>A step-by-step assessment to see exactly where you stand and what needs attention.</p>
             </div>
-            <div class="toolkit-item">
+            <div class="toolkit-item fade-in">
                 <span class="item-tag tag-guide">Guide</span>
                 <h4>Will a Recession Rob Your Retirement?</h4>
                 <p>How to protect your portfolio during market downturns without sacrificing long-term growth.</p>
@@ -83,10 +87,12 @@ description: "Get complimentary retirement planning resources — ebook, guides,
     </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ABOUT MIKE -->
 <section class="section">
     <div class="container">
-        <div class="author-content">
+        <div class="author-content fade-in">
             <div class="author-photo">
                 <img src="/assets/images/photos/mike-author.jpg" alt="Michael Stevens, fiduciary financial advisor" class="author-img">
             </div>
@@ -114,11 +120,13 @@ description: "Get complimentary retirement planning resources — ebook, guides,
     </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- OPT-IN -->
 <section id="get-toolkit" class="section section-dark">
     <div class="container">
         <div class="optin-content">
-            <div class="optin-text">
+            <div class="optin-text fade-in">
                 <div class="eyebrow" style="color: var(--accent-yellow);">Get Instant Access</div>
                 <h2>Get Your Free Retirement Toolkit</h2>
                 <p>Enter your information below and we'll send you immediate access to all six resources — the ebook, guides, and checklist.</p>
@@ -137,7 +145,7 @@ description: "Get complimentary retirement planning resources — ebook, guides,
                     </li>
                 </ul>
             </div>
-            <div class="optin-form-wrap">
+            <div class="optin-form-wrap fade-in">
                 <form class="optin-form" id="toolkitForm" action="#" method="POST">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
@@ -165,3 +173,16 @@ description: "Get complimentary retirement planning resources — ebook, guides,
         </div>
     </div>
 </section>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = `${i * 0.1}s`;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
