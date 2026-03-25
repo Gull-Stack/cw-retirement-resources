@@ -100,8 +100,15 @@ a:hover { color: var(--accent-blue-hover); }
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 70% 20%, rgba(255,255,255,0.05) 1px, transparent 1px),
+        radial-gradient(circle at 85% 60%, rgba(255,255,255,0.04) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 40% 75%, rgba(255,255,255,0.05) 1px, transparent 1px),
+        radial-gradient(circle at 10% 80%, rgba(255,255,255,0.03) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 60% 45%, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px, 120px 100px, 90px 130px, 140px 110px, 100px 140px, 160px 120px, 110px 90px;
     pointer-events: none;
     z-index: 0;
 }
@@ -113,7 +120,17 @@ a:hover { color: var(--accent-blue-hover); }
 .hero h1 { color: #fff; }
 .hero p { color: var(--text-muted-dark); font-size: 1.15rem; }
 .hero .eyebrow { color: var(--accent-yellow); }
-.hero-book-img { max-width: 300px; width: 100%; }
+.hero-book-img {
+    max-width: 300px; width: 100%;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.3)) drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Book bounce/float animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 
 /* Sections */
 .section { padding: 5rem 0; position: relative; }
